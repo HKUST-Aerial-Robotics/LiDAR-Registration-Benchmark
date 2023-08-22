@@ -1,0 +1,19 @@
+kitti_root: /media/qzj/Document/datasets/KITTI/odometry/data_odometry_velodyne/dataset/
+apollo_root: /media/qzj/Document/datasets/Apollo
+kitti360_root: /media/qzj/Document/datasets/KITTI-360
+hit_root: /media/qzj/Document/datasets/HIT/dataset
+
+sample_interval: 2 # meters for downsample
+skip_frames: 250 # skip frames for loop closure detection
+
+evaluation:
+  rot_thd: 5 # the error between the estimated pose and GT shouldn't exceed 5 degrees
+  trans_thd: 2 # the error between the estimated pose and GT shouldn't exceed 2 meters
+
+fpfh:
+  voxel_size: 0.5 # meter
+  radius_normal: 1.0 # meter, for normal estimation
+  radius_feature: 2.5 # meter, for feature estimation
+
+teaser:
+  noise_bound: 0.4 # meter
