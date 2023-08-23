@@ -18,23 +18,27 @@ The objective of this benchmark is to assess the performance of LiDAR-based 3D r
 
 For the evaluation of global registration, the registration is considered successful if the estimated pose is within a deviation of **5 degrees** from the ground truth rotation and **2 meters** from the ground truth translation. These thresholds of 5 degrees and 2 meters for rotation and translation, respectively, are in line with the settings employed by state-of-the-art methods.
 ## Quick Start
-
-We have prepared the test set files in the [benchmarks](benchmarks) folder. Each file is named according to the translation range of the point cloud pairs. For instance, [test_0_10.txt](benchmarks/kitti_lc/test_0_10.txt) indicates that the translation range of the point cloud pairs is between 0 and 10 meters. Each line of the file contains the sequence ID and frame ID of the point cloud pairs, along with their corresponding ground truth pose.
-
-To evaluate your method, please refer to [evaluate.py](examples/evaluate.py). If you want to get a good result without training any network, try to install [teaserpp_python](https://github.com/MIT-SPARK/TEASER-plusplus) and [open3d](http://www.open3d.org/docs/release/index.html) and run the following command to see a simple demo:
+### Pairwise Registration
+If you want to get a good result without training any network, try to install [teaserpp_python](https://github.com/MIT-SPARK/TEASER-plusplus) and [open3d](http://www.open3d.org/docs/release/index.html) and run the following command to see a simple demo:
 ```angular2html
 python examples/demo_teaser_fpfh.py
 ```
 
-And you will see the following results:
+And you will see the following results (before and after registration):
 | ![img1](docs/before_teaser.png) | ![img2](docs/teaser_reg.png) |
 |:--:|:--:|
 
-To evaluate TEASER with FPFH on the test set, please run the following command:
+### Comprehensive Evaluation
+
+We have prepared the test set files in the [benchmarks](benchmarks) folder. Each file is named according to the translation range of the point cloud pairs. For instance, [test_0_10.txt](benchmarks/kitti_lc/test_0_10.txt) indicates that the translation range of the point cloud pairs is between 0 and 10 meters. Each line of the file contains the sequence ID and frame ID of the point cloud pairs, along with their corresponding ground truth pose.
+
+To evaluate your method, please refer to [evaluate.py](examples/evaluate.py). For example, to evaluate TEASER with FPFH on the test set, please run the following command:
 ```
 # Identify the path of KITTI Odometry dataset in the config file 'configs/dataset.yaml'
 # Evaluate on KITTI-10m dataset (you will find a better result than the result reported in the paper:))
 python examples/evaluate.py --test_file benchmarks/kitti_10m/test.txt
+```
+```
 # Evaluate on KITTI loop-closure dataset with a translation range of 0-10m
 python examples/evaluate.py --test_file benchmarks/kitti_lc/test_0_10.txt
 ```
@@ -130,4 +134,4 @@ Check the generated test set in the folder [benchmarks](benchmarks). If you want
     <img src="docs/apollo_lc.png" width="500px"/>
 </div>
 
-More details can be found in [G3Reg](https://github.com/qiaozhijian/LiDAR-Registration-Benchmark).
+More details can be found in [G3Reg](https://arxiv.org/abs/2308.11573).
