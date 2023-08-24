@@ -1,6 +1,6 @@
 # LiDAR-Registration-Benchmark
 ## Introduction
-This repository provides the benchmark for **LiDAR-based 3D registration**. Currently, we support the following datasets:
+This repository provides the benchmark for **LiDAR-based 3D registration**. Currently, we support the following datasets (**welcome** to contribute more datasets):
 - [KITTI Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php)
 - [KITTI-360](http://www.cvlibs.net/datasets/kitti-360/)
 - [Apollo-SouthBay](https://developer.apollo.auto/southbay.html)
