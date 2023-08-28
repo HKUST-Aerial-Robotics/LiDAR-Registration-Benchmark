@@ -120,6 +120,8 @@ python examples/generate_test_set.py --dataset apollo_lc
 
 Check the generated test set in the folder [benchmarks](benchmarks). If you want to check the ground truth poses, please refer to [check_poses.py](examples/check_poses.py).
 
+**Notes:** when it comes to deep learning-based methods, it is recommended to utilize sequential point clouds for training their networks.
+
 ### Evaluation Results of State-of-the-art Methods
 
 <div align="center">
