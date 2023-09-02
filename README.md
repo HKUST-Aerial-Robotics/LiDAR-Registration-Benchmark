@@ -6,7 +6,7 @@ This repository provides the benchmark for **LiDAR-based 3D registration**. Curr
 - [Apollo-SouthBay](https://developer.apollo.auto/southbay.html)
 
 The objective of this benchmark is to assess the performance of LiDAR-based 3D registration algorithms in challenging outdoor environments. We offer a test set that includes ground truth poses for each dataset. In comparison to the commonly used KITTI-10m benchmark, which is utilized in most deep-learning-based studies, our point cloud pairs present greater challenges due to the following factors:
-- The point cloud pairs are gathered in **loop-closure** scenarios, which are more challenging than the point cloud pairs collected in the same trajectory.
+- The point cloud pairs are gathered in **loop-closure** scenarios, which are more challenging than the temporally adjacent point cloud pairs.
 - These three datasets encompass diverse outdoor environments, including **urban, highway, and suburban areas**.
 - In contrast to the mere 556 frames in KITTI-10m benchmark, we provide **3325** frames in KITTI Odometry, **18469** frames in KITTI-360, and **55118** frames in Apollo-SouthBay with a downsampled rate of 2m.
 - The translation and rotation of the point cloud pairs exceed those in the KITTI-10m benchmark, spanning a range of **0-40m** and **-180-180 degrees**, respectively, as illustrated in the following figure.
